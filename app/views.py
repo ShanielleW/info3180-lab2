@@ -12,6 +12,24 @@ from flask import render_template, request, redirect, url_for, flash
 ###
 # Routing for your application.
 ###
+@app.route('/profile')
+def profile():
+	"""Render website profile page."""
+	user = {
+	'profile_pic': url_for('static', filename='images/profilepic.jpg'),
+	'fullname': 'Shanielle Williams',
+	'username': '@ShanielleW',
+	'location': 'St. Andrew, Jamaica',
+	'date_joined': format_date(),
+	'bio':"The Revolution shall not be televised" ,
+	'post_num':2,
+	'followers_num':39,
+	'following_num': 20
+	}
+	return render_template('profile.html',userdata = user)
+
+def format_date():
+    return datetime.date(2018,2,11).strftime("%B, %Y")
 
 @app.route('/')
 def home():

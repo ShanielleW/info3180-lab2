@@ -1,0 +1,44 @@
+{% extends 'base.html'%}
+
+{% block main %}
+<div class="profilecontainer" id="profileInfo">
+ <div id="row">
+  <img src= {{ user["profile_pic"] }} id="profilepic"/>
+ </div>
+ <div id="row">
+  <span id="fullname">{{user["fullname"]}}</span>
+ </div>
+ <div id="row">
+  <span id="username">{{user["username"]}}</span>
+ </div>
+ <div id="row">
+  <span id="location">{{user["location"]}}</span>
+ </div>
+ <div id="row">
+  <span id="time_joined">{{user["date_joined"]}}</span>
+ </div>
+<div class="container" id="profileAbout">
+ <div class="bio_container">
+  <span>{{user["bio"]}</span>
+ </div>
+ <div class="social_container">
+  <div class="row">
+   <div class="column">
+    <span>{{user["post_num"]}</span><br>
+    <label id="post_label">Post</label>
+   </div>
+   <div class="column">
+    <span>{{user["following_num"]}</span><br>
+    <label id="following_label">Following</label>
+   </div>
+   <div class="column">
+    <span>{{user["followers_num"]}</span><br>
+    <label id="followers_label">Followers</label>
+   </div>
+  </div>
+ </div>
+ <div class="btn_container">
+  <button type="button" class="btn">Follow</button>
+ </div>
+</div>
+{% endblock %}
